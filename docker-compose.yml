@@ -1,7 +1,7 @@
-# Help: rename the adject docker-compose.override.example.yml file to docker-compose.override.yml
+# Help: rename the adject docker-compose.override.yml file to docker-compose.override.yml
 #       then in the override file uncomment the environment tag for the collectors you want to
 #       run. Then add the environment vars you want to use.
-version: '3'
+version: '3.2'
 services:
   db:
     image: mongo:latest
@@ -135,11 +135,11 @@ services:
     depends_on:
       - db-setup
 
-  subversion-collector:
-    build: collectors/scm/subversion
-    image: hygieia-subversion-scm-collector
-    depends_on:
-      - db-setup
+#  subversion-collector:
+#    build: collectors/scm/subversion
+#    image: hygieia-subversion-scm-collector
+#    depends_on:
+#      - db-setup
 
   udeploy-collector:
     build: collectors/deploy/udeploy
